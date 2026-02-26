@@ -218,6 +218,11 @@ MIT License — feel free to use and modify.
 
 ---
 
+## 📎 Project Presentation
+
+[📥 Download Project PPT](MS_Elevate_ChurnShield_Final.pptx)
+
+
 <div align="center">
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer)
