@@ -25,7 +25,7 @@ An end-to-end Machine Learning project with a premium interactive dashboard.
 Microsoft Elevate Internship — AI & ML Capstone Project 2026
 
 [![GitHub](https://img.shields.io/badge/GitHub-DilliPrasanna2244-181717?style=for-the-badge&logo=github)](https://github.com/DilliPrasanna2244)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/dilli-prasanna-bandi)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/dilliprasannabandi)
 
 ---
 
@@ -170,7 +170,7 @@ customer-churn-prediction/
 
 ## 🌐 Live Demo
 
-> 🔗 **[Click here to open the live app](https://dilliprasanna2244-customer-churn-prediction.streamlit.app)**
+> 🔗 **[Click here to open the live app](https://customer-churn-prediction-microsoft-internship-project.streamlit.app/)**
 
 ---
 
