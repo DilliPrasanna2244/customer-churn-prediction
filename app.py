@@ -16,7 +16,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
 
 # ── PAGE CONFIG ───────────────────────────────────────────────────────────────
-st.set_page_config(page_title="ChurnShield AI", page_icon="🛡️", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="ChurnShield AI", page_icon="🛡️", layout="wide", initial_sidebar_state="auto")
 
 # ── CSS ───────────────────────────────────────────────────────────────────────
 st.markdown("""
@@ -34,23 +34,55 @@ st.markdown("""
 }
 html,body,[class*="css"],.stApp{font-family:'Space Grotesk',sans-serif!important;background-color:var(--bg)!important;color:var(--txt)!important;}
 .stApp{background:radial-gradient(ellipse at 10% 20%,rgba(99,102,241,.08) 0%,transparent 50%),radial-gradient(ellipse at 90% 80%,rgba(139,92,246,.08) 0%,transparent 50%),var(--bg)!important;background-attachment:fixed!important;}
+
+/* ── HIDE ONLY FOOTER AND DECORATION — keep header/hamburger visible ── */
 #MainMenu,footer,[data-testid="stDecoration"]{visibility:hidden!important;display:none!important;}
-/* Keep header visible for mobile hamburger ☰ button */
-header{visibility:visible!important;display:block!important;background:transparent!important;}
-[data-testid="stHeader"]{background:rgba(5,11,24,0.95)!important;backdrop-filter:blur(10px)!important;border-bottom:1px solid rgba(99,102,241,.2)!important;}
-[data-testid="stSidebarCollapsedControl"]{background:rgba(99,102,241,.2)!important;border:1px solid rgba(99,102,241,.5)!important;border-radius:8px!important;}
-[data-testid="stSidebarCollapsedControl"] svg{color:#A5B4FC!important;fill:#A5B4FC!important;}
+
+/* ── HEADER — dark themed, always visible for hamburger ── */
+[data-testid="stHeader"]{
+    background:linear-gradient(90deg,#080F1E,#0D1528)!important;
+    border-bottom:1px solid rgba(99,102,241,.25)!important;
+    backdrop-filter:blur(12px)!important;
+}
+
+/* ── HAMBURGER BUTTON — make it glow so mobile users can find it ── */
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="collapsedControl"]{
+    background:rgba(99,102,241,.25)!important;
+    border:1px solid rgba(99,102,241,.6)!important;
+    border-radius:10px!important;
+    padding:4px!important;
+}
+[data-testid="stSidebarCollapsedControl"] svg,
+[data-testid="collapsedControl"] svg{
+    color:#A5B4FC!important;
+    fill:#A5B4FC!important;
+    width:20px!important;
+    height:20px!important;
+}
+/* Also style the expand arrow inside sidebar */
+[data-testid="stSidebarCollapseButton"] button{
+    background:rgba(99,102,241,.2)!important;
+    border-radius:8px!important;
+    color:#A5B4FC!important;
+}
+
+/* ── LAYOUT ── */
 .block-container{padding:1.5rem 2.5rem 3rem!important;max-width:1400px!important;}
-[data-testid="stSidebar"]{background:linear-gradient(180deg,#080F1E,#0D1528)!important;border-right:1px solid var(--border)!important;}
-/* MOBILE RESPONSIVE */
+[data-testid="stSidebar"]{background:linear-gradient(180deg,#080F1E,#0D1528)!important;border-right:1px solid rgba(99,102,241,.2)!important;}
+
+/* ── MOBILE RESPONSIVE ── */
 @media(max-width:768px){
-    .block-container{padding:1rem!important;}
-    .hero{padding:1.5rem 1.2rem!important;}
-    .hero-title{font-size:1.8rem!important;}
-    .hero-sub{font-size:.9rem!important;}
-    .kpi{padding:1rem!important;}
-    .kpi-val{font-size:1.6rem!important;}
+    .block-container{padding:0.8rem 0.8rem 2rem!important;}
+    .hero{padding:1.2rem 1rem!important;border-radius:16px!important;}
+    .hero-title{font-size:1.6rem!important;line-height:1.2!important;}
+    .hero-sub{font-size:.85rem!important;}
+    .hero-badge{font-size:.65rem!important;}
+    .kpi{padding:.9rem 1rem!important;border-radius:14px!important;}
+    .kpi-val{font-size:1.5rem!important;}
+    .kpi-lbl{font-size:.65rem!important;}
     .ig{grid-template-columns:1fr!important;}
+    .ccard{padding:1rem .9rem .8rem!important;}
 }
 
 /* HERO */
